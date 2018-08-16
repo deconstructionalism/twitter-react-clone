@@ -1,0 +1,8 @@
+.Tweetform-form > * {
+  display: block;
+}
+
+.Tweetform-form {
+  width: 200px;
+  margin: 0 auto;
+}

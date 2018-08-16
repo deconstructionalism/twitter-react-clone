@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/App.css'
 
 import Header from '../components/Header.js'
+import TweetForm from '../components/TweetForm.js'
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class App extends Component {
       <div className="App">
         <Header username={this.state.username}
                 headerImage={this.state.headerImage}/>
+        <TweetForm />
       </div>
     )
   }
