@@ -4,7 +4,7 @@ import '../styles/Header.css'
 const Header = props => {
 
   const styles = {
-      backgroundImage: props.headerImage
+      backgroundImage: `url(${props.headerImage})`
   }
 
   return (
