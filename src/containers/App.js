@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import '../styles/App.css'
 
@@ -11,6 +12,8 @@ class App extends Component {
     this.state = {
       username: "RubyJesus",
       headerImage: "http://bdfjade.com/data/out/56/5631356-background-image.png",
+      quote: '',
+      quoteAuthor: '',
       tweets: [{
           author: 'Ruby Jesus',
           createdDate: '01/22/1989',
@@ -96,7 +99,7 @@ class App extends Component {
     console.log(tweet)
     this.setState(prevState => {
       let nextState = Object.assign({}, prevState)
-      nextState.tweets.unshift(tweet)
+      nextState.tweets.unshift(tweet) 
       return nextState
     })
   }
@@ -105,12 +108,26 @@ class App extends Component {
     console.warn('Be careful, this may or may not actually be Twitter!')
   }
 
+  componentDidMount() {
+    axios.get('http://quotes.rest/qod.json')
+        .then(data => {
+          console.log(data)
+          const quoteData = data.data.contents.quotes[0]
+          this.setState({
+            quote: quoteData.quote,
+            quoteAuthor: quoteData.author
+          })
+        })
+  }
+
 
   render() {
     return (
       <div className="App">
         <Header username={this.state.username}
-                headerImage={this.state.headerImage}/>
+                headerImage={this.state.headerImage}
+                quote={this.state.quote}
+                quoteAuthor={this.state.quoteAuthor}/>
         <TweetForm addTweet={this.addTweet}/>
         <TweetList tweets={this.state.tweets}/>
       </div>
