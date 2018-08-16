@@ -101,6 +101,11 @@ class App extends Component {
     })
   }
 
+  componentWillMount() {
+    console.warn('Be careful, this may or may not actually be Twitter!')
+  }
+
+
   render() {
     return (
       <div className="App">
