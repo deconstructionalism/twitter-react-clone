@@ -14,7 +14,7 @@ const TweetForm = props => {
     <form className="Tweetform-form"
           onSubmit={tweetSubmit}>
         <label>Enter your tweet!</label>
-        <textarea maxlength="140"/>
+        <textarea maxLength="140"/>
         <button type="submit">Submit</button>
     </form>
   )
