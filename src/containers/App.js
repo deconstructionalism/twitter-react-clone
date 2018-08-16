@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
-import logo from '../images/logo.svg'
 import '../styles/App.css'
 
+import Header from '../components/Header.js'
+
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: "RubyJesus",
+      headerImage: "http://www.wallpaperbetter.com/wallpaper/513/91/777/cool-technology-code-1080P-wallpaper-middle-size.jpg"
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header username={this.state.username}
+                headerImage={this.state.headerImage}/>
       </div>
     )
   }

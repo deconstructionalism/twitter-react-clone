@@ -1,11 +1,19 @@
 import React from 'react'
+import '../styles/Header.css'
 
-const Header = () => {
+const Header = props => {
+
+  const styles = {
+      backgroundImage: props.headerImage
+  }
+
   return (
-    <div>
-      
+    <div className="Header-div"
+         style={styles}>
+      {props.username}
     </div>
   )
 }
+
 
 export default Header
