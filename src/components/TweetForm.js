@@ -6,8 +6,8 @@ const TweetForm = props => {
 
   const tweetSubmit = e => {
     e.preventDefault()
-    const message = e.target.querySelector('textarea')
-    // logic to add tweet to list of tweets
+    const message = e.target.querySelector('textarea').value
+    props.addTweet(message)
   }
 
   return (

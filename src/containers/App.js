@@ -10,7 +10,7 @@ class App extends Component {
     super(props)
     this.state = {
       username: "RubyJesus",
-      headerImage: "http://www.wallpaperbetter.com/wallpaper/513/91/777/cool-technology-code-1080P-wallpaper-middle-size.jpg",
+      headerImage: "http://bdfjade.com/data/out/56/5631356-background-image.png",
       tweets: [{
           author: 'Ruby Jesus',
           createdDate: '01/22/1989',
@@ -83,14 +83,30 @@ class App extends Component {
         }
       ]
     }
+
+    this.addTweet = this.addTweet.bind(this)
+  }
+
+  addTweet(text) {
+    const tweet = {
+      text,
+      author: this.state.username,
+      createdDate: new Date(Date.now()).toDateString()
     }
+    console.log(tweet)
+    this.setState(prevState => {
+      let nextState = Object.assign({}, prevState)
+      nextState.tweets.unshift(tweet)
+      return nextState
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <Header username={this.state.username}
                 headerImage={this.state.headerImage}/>
-        <TweetForm />
+        <TweetForm addTweet={this.addTweet}/>
         <TweetList tweets={this.state.tweets}/>
       </div>
     )
