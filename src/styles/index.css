@@ -1,5 +1,13 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  /* background-color: rgb(255, 250, 240); */
+  background-image: linear-gradient(to bottom, rgb(240, 255, 240), rgb(255, 250, 240));
+  font-family: 'Noto Sans', sans-serif;
+  color: darkslategray;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
 }

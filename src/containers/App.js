@@ -10,7 +10,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: "RubyJesus",
+      username: "student",
       headerImage: "http://bdfjade.com/data/out/56/5631356-background-image.png",
       quote: '',
       quoteAuthor: '',
@@ -36,7 +36,7 @@ class App extends Component {
         },
         {
           author: 'Dante Aligheri',
-          createdDate: '31/07/1992',
+          createdDate: '7/31/1992',
           text: 'The divine comedy was one of the best books'
         },
         {
@@ -81,7 +81,7 @@ class App extends Component {
         },
         {
           author: 'kelechi',
-          createdDate: '16/08/18',
+          createdDate: '6/08/18',
           text: 'The other day, I got a henna tattoo that says "Forever." (Corey you can borrow that one)'
         }
       ]
@@ -91,6 +91,9 @@ class App extends Component {
   }
 
   addTweet(text) {
+    if(text.length === 0) {
+      return
+    }
     const tweet = {
       text,
       author: this.state.username,
@@ -109,10 +112,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://quotes.rest/qod.json')
+    axios.get('https://talaikis.com/api/quotes/random/')
         .then(data => {
-          console.log(data)
-          const quoteData = data.data.contents.quotes[0]
+          const quoteData = data.data
           this.setState({
             quote: quoteData.quote,
             quoteAuthor: quoteData.author

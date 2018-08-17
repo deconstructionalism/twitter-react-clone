@@ -1,12 +1,29 @@
 .Header-div {
-    width: 100%;
-    background-color: rgb(222, 196, 255);
+    width: 100vw;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 200px;
-    color: black;
+    padding: 50px 0;
+}
+
+.Header-user {
     letter-spacing: 4px;
     font-weight: 800;
     font-family: 'Raleway', sans-serif;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-size: 80px;
+}
+
+.Header-quote {
+    display: inline-block;
+    width: 800px;
+    background: rgba(255, 255, 255, 0.555);
+    padding: 15px 22px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.Header-quoteAuthor {
+    font-size: 16px;
 }

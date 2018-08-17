@@ -10,11 +10,11 @@ const Header = props => {
   return (
     <div className="Header-div"
          style={styles}>
-      <div>
-        <h1 className="Header-user">{props.username}</h1>
-        <p className="Header-quote">{props.quote}</p>
+        <h1 className="Header-user">{`${props.username}'s twitter feed`}</h1>
+        <div className="Header-quote">
+        <p className="Header-quoteText">{props.quote}</p>
         <span className="Header-quoteAuthor">{`– ${props.quoteAuthor}`}</span>
-      </div>
+        </div>
     </div>
   )
 }

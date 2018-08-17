@@ -6,16 +6,22 @@ const TweetForm = props => {
 
   const tweetSubmit = e => {
     e.preventDefault()
-    const message = e.target.querySelector('textarea').value
+    const textarea = e.target.querySelector('textarea')
+    const message = textarea.value
     props.addTweet(message)
+    textarea.value = ''
+
   }
 
   return (
     <form className="Tweetform-form"
           onSubmit={tweetSubmit}>
-        <label>Enter your tweet!</label>
-        <textarea maxLength="140"/>
-        <button type="submit">Submit</button>
+        <legend htmlFor="tweet-text">compose</legend>
+        <div className="Tweetform-inputs">
+          <textarea id="tweet-text" 
+                    maxLength="140"/>
+          <button type="submit">send</button>
+        </div>
     </form>
   )
 }
